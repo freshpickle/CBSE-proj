@@ -1,0 +1,145 @@
+
+#include <conio.h>
+#include <iostream>
+#include <windows.h>
+
+
+using namespace std;
+COORD coord={0,0};
+void gotoxy(int x,int y)
+{
+  coord.X=x;
+    coord.Y=y;
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),coord);
+}
+
+
+class Customer
+{
+	
+	char Name[20],Username[12],password[10];
+	public:
+		void Newuser()
+		{
+			cout<<"Enter your Name"<<endl;
+			gets(Name);
+			cout<<"Enter your username";
+
+		}
+};
+
+
+
+
+
+void Login()
+{
+	char Uname[]="Hello";
+	char pswd[]="World";
+	char name[10],pwd[10];
+	int i=0;
+	char ch;
+gotoxy(45,5);
+    cout<<"Enter your Login credentials"<<endl;
+    gotoxy(43,7);cout<<"Username: "<<endl;
+    gotoxy(43,8);cout<<"Password: "<<endl;
+	gotoxy(52,7);cin>>name;
+	gotoxy(52,8);	
+	do{
+		ch=getch();
+		if (ch==13)
+		break;
+		cout<<"*";
+		pwd[i]=ch;
+		i++;
+		
+		
+	}while(ch!=13);
+	if(strcmp(pwd,pswd)==0)
+	system("CLS");
+	else
+	cout<<"Password wrong pls try again";
+		
+}
+
+void Delay()
+{
+	for(long k=0;k<1000000;k++)
+	{
+	}
+}
+
+void Printstar()
+{int i,j;
+
+for( i=59, j=60;i>=0;i--,j++)
+{gotoxy(i,0);
+cout<<"*";
+Delay();
+gotoxy(j,0);
+cout<<"*";
+Delay();
+}
+for(int c=0,d=1,e=0,f=1;c<=27;c++,d++,e++,f++)
+{gotoxy(0,c);
+cout<"*";
+Delay();
+gotoxy(119,e);
+cout<<"*";
+Delay();
+gotoxy(0,d);
+cout<<"*";
+Delay();
+gotoxy(119,f);
+cout<<"*";
+Delay();
+}
+for(int x=0,y=119;y>=59;x++,y--)
+{
+	gotoxy(x,28);
+	cout<<"*";
+	Delay();
+	gotoxy(y,28);
+	cout<<"*";
+	Delay();
+	
+}
+
+}
+
+	void MainMenu()
+	{int option;
+	
+		gotoxy(52,6);
+		cout<<"MAIN MENU"<<endl;
+		cout<<"please select your option"<<endl;
+	
+		cout<<"1.)New car,huh? Let's get her registered."<<endl;
+		cout<<"2.)New around here? Don't worry,you can register here!"<<endl;
+		cout<<"3.)We have a wide variety of vehicles to choose from,have a look!"<<endl;
+		cout<<"4.)Want some wheels? Press 4 to get started."<<endl;
+		cout<<"5.)Let us know what you thought of the car!"<<endl;
+		cout<<"6.)EXIT"<<endl;
+		
+		
+		cin>>option;
+		switch (option)
+		{
+		
+			default : 	gotoxy(50,10);cout<<"INVALID";
+			
+		}
+	}
+
+
+    int main()
+    {
+        Login();
+        Printstar();
+        MainMenu();
+    }
+    
+    
+    
+    
+    
